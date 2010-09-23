@@ -19,4 +19,9 @@ describe Person do
   it "is valid with valid attributes" do
     @person.should be_valid
   end
+
+  it "should have an array of phone numbers" do
+    @person.phone_numbers.class.should == Array    
+  end
+  
 end
