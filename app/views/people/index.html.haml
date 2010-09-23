@@ -1,0 +1,15 @@
+- title "People"
+
+%table
+  %tr
+    %th First name
+    %th Last name
+  - for person in @people
+    %tr
+      %td= h person.first_name
+      %td= h person.last_name
+      %td= link_to 'Show', person
+      %td= link_to 'Edit', edit_person_path(person)
+      %td= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Person", new_person_path

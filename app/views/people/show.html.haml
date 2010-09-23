@@ -1,0 +1,15 @@
+- title "Person"
+
+%p
+  %strong First Name:
+  =h @person.first_name
+%p
+  %strong Last Name:
+  =h @person.last_name
+
+%p
+  = link_to "Edit", edit_person_path(@person)
+  |
+  = link_to "Destroy", @person, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", people_path
