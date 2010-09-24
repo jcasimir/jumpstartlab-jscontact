@@ -5,4 +5,9 @@ class Label < ActiveRecord::Base
   has_many :email_addresses
   
   validates_presence_of :name
+  
+  def to_s
+    name
+  end
+  
 end
