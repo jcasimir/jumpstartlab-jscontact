@@ -1,0 +1,15 @@
+- title "Email Addresses"
+
+%table
+  %tr
+    %th Address
+    %th Person
+  - for email_address in @email_addresses
+    %tr
+      %td= h email_address.address
+      %td= h email_address.person_id
+      %td= link_to 'Show', email_address
+      %td= link_to 'Edit', edit_email_address_path(email_address)
+      %td= link_to 'Destroy', email_address, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Email Address", new_email_address_path
