@@ -19,4 +19,9 @@ describe PhoneNumber do
     @phone_number.person = nil
     @phone_number.should_not be_valid
   end
+  
+  it "should have a single label" do
+    @phone_number.label.should exist
+  end
+  
 end
