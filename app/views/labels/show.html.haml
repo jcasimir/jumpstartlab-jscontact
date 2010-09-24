@@ -1,0 +1,12 @@
+- title "Label"
+
+%p
+  %strong Name:
+  =h @label.name
+
+%p
+  = link_to "Edit", edit_label_path(@label)
+  |
+  = link_to "Destroy", @label, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", labels_path
