@@ -4,10 +4,12 @@
   %tr
     %th First Name
     %th Last Name
+    %th Phone Numbers
   - for person in @people
     %tr
       %td= h person.first_name
       %td= h person.last_name
+      %td= print_numbers person.phone_numbers
       %td= link_to 'Show', person
       %td= link_to 'Edit', edit_person_path(person)
       %td= link_to 'Delete', person, :confirm => "Are you sure you want to delete #{person}?", :method => :delete
