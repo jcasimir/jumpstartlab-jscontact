@@ -1,4 +1,5 @@
 db/*.sqlite3
 tmp/
 log/development.log
+log/test.log
 public/stylesheets/application.css
