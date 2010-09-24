@@ -29,7 +29,7 @@ class PhoneNumbersController < ApplicationController
     @phone_number = PhoneNumber.find(params[:id])
     if @phone_number.update_attributes(params[:phone_number])
       flash[:notice] = "Successfully updated phone number."
-      redirect_to @phone_number
+      redirect_to @phone_number.person
     else
       render :action => 'edit'
     end
@@ -39,6 +39,6 @@ class PhoneNumbersController < ApplicationController
     @phone_number = PhoneNumber.find(params[:id])
     @phone_number.destroy
     flash[:notice] = "Successfully destroyed phone number."
-    redirect_to phone_numbers_url
+    redirect_to @phone_number.person
   end
 end

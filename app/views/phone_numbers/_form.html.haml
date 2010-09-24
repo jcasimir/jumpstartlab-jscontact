@@ -6,3 +6,4 @@
     
   - f.buttons do
     = f.commit_button
+    = link_to('or Delete this Phone Number', @phone_number, :confirm => 'Are you sure?', :method => :delete) unless @phone_number.new_record?
