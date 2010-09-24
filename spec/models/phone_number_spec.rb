@@ -21,7 +21,9 @@ describe PhoneNumber do
   end
   
   it "should have a single label" do
-    @phone_number.label.should exist
+    label = Label.new
+    @phone_number.label = label
+    @phone_number.label.should equal label
   end
   
 end

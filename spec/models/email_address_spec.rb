@@ -19,4 +19,10 @@ describe EmailAddress do
     @email_address.person_id = nil
     @email_address.should_not be_valid
   end
+  
+  it "should have a single label" do
+    label = Label.new
+    @email_address.label = label
+    @email_address.label.should equal label
+  end
 end
