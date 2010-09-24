@@ -1,5 +1,5 @@
-- title "New Phone Number"
+- title "#{@phone_number.person} -- Add a Phone Number"
 
 = render :partial => 'form'
 
-%p= link_to "Back to List", phone_numbers_path
+%p= link_to "Back to #{@phone_number.person}", person_path(@phone_number.person)

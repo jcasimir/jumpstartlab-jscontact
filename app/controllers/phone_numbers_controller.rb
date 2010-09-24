@@ -8,14 +8,14 @@ class PhoneNumbersController < ApplicationController
   end
   
   def new
-    @phone_number = PhoneNumber.new
+    @phone_number = PhoneNumber.new(:person_id => params[:person_id])
   end
   
   def create
     @phone_number = PhoneNumber.new(params[:phone_number])
     if @phone_number.save
       flash[:notice] = "Successfully created phone number."
-      redirect_to @phone_number
+      redirect_to person_path(@phone_number.person)
     else
       render :action => 'new'
     end

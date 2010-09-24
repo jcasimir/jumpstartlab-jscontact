@@ -1,15 +1,11 @@
-- title "Person"
+- title @person
 
 %p
-  %strong First Name:
-  =h @person.first_name
-%p
-  %strong Last Name:
-  =h @person.last_name
-
+  %strong Phone Numbers:
+  = print_numbers @person.phone_numbers
 %p
   = link_to "Edit", edit_person_path(@person)
   |
-  = link_to "Destroy", @person, :confirm => 'Are you sure?', :method => :delete
+  = link_to "Destroy", @person, :confirm => "Really delete #{@person}?", :method => :delete
   |
-  = link_to "View All", people_path
+  = link_to "View All People", people_path
