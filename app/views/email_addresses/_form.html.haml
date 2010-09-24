@@ -1,12 +1,9 @@
-- form_for @email_address do |f|
+- semantic_form_for @email_address do |f|
   = f.error_messages
-  %p
-    = f.label :address
-    %br
-    = f.text_field :address
-  %p
-    = f.label :person_id
-    %br
-    = f.text_field :person_id
-  %p
-    = f.submit
+  - f.inputs do
+    = f.input :address
+    = f.input :person_id, :as => :hidden
+    
+  - f.buttons do
+    = f.commit_button
+    = link_to('or Delete this Email Address', @email_address, :confirm => 'Are you sure?', :method => :delete) unless @email_address.new_record?

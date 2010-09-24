@@ -8,14 +8,14 @@ class EmailAddressesController < ApplicationController
   end
   
   def new
-    @email_address = EmailAddress.new
+    @email_address = EmailAddress.new(:person_id => params[:person_id])
   end
   
   def create
     @email_address = EmailAddress.new(params[:email_address])
     if @email_address.save
       flash[:notice] = "Successfully created email address."
-      redirect_to @email_address
+      redirect_to @email_address.person
     else
       render :action => 'new'
     end
@@ -29,7 +29,7 @@ class EmailAddressesController < ApplicationController
     @email_address = EmailAddress.find(params[:id])
     if @email_address.update_attributes(params[:email_address])
       flash[:notice] = "Successfully updated email address."
-      redirect_to @email_address
+      redirect_to @email_address.person
     else
       render :action => 'edit'
     end
@@ -39,6 +39,6 @@ class EmailAddressesController < ApplicationController
     @email_address = EmailAddress.find(params[:id])
     @email_address.destroy
     flash[:notice] = "Successfully destroyed email address."
-    redirect_to email_addresses_url
+    redirect_to @email_address.person
   end
 end

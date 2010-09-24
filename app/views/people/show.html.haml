@@ -3,6 +3,11 @@
 %p
   %strong Phone Numbers:
   = print_numbers @person.phone_numbers
+
+%p
+  %strong Email Addresses:
+  = print_email_addresses @person.email_addresses
+
 %p
   = link_to "Edit", edit_person_path(@person)
   |
