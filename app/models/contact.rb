@@ -3,4 +3,6 @@ class Contact < ActiveRecord::Base
   
   has_many :phone_numbers
   has_many :email_addresses
+  has_many :taggings
+  has_many :notes, :through => :taggings, :as => :asset, :conditions => {'taggings.asset_type' => "Note"}
 end
