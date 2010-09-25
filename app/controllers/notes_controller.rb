@@ -13,6 +13,7 @@ class NotesController < ApplicationController
   
   def create
     @note = Note.new(params[:note])
+    # debugger
     if @note.save
       flash[:notice] = "Successfully created note."
       redirect_to @note
