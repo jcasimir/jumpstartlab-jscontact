@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :taggings
+
+  map.resources :notes
+
   map.resources :companies
 
   map.resources :contacts

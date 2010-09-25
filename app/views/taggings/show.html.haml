@@ -1,0 +1,18 @@
+- title "Tagging"
+
+%p
+  %strong Contact:
+  =h @tagging.contact_id
+%p
+  %strong Asset:
+  =h @tagging.asset_id
+%p
+  %strong Asset Type:
+  =h @tagging.asset_type
+
+%p
+  = link_to "Edit", edit_tagging_path(@tagging)
+  |
+  = link_to "Destroy", @tagging, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", taggings_path

@@ -1,0 +1,16 @@
+- form_for @tagging do |f|
+  = f.error_messages
+  %p
+    = f.label :contact_id
+    %br
+    = f.text_field :contact_id
+  %p
+    = f.label :asset_id
+    %br
+    = f.text_field :asset_id
+  %p
+    = f.label :asset_type
+    %br
+    = f.text_field :asset_type
+  %p
+    = f.submit
