@@ -1,8 +1,9 @@
-- form_for @attachment do |f|
+- semantic_form_for @attachment, :html => {:multipart => true} do |f|
   = f.error_messages
-  %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.submit
+
+  - f.inputs do
+    = f.input :title
+    = f.input :file, :as => :file
+    = f.input :contacts, :as => :check_boxes
+
+  = f.buttons
