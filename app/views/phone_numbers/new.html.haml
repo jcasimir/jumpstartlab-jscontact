@@ -1,5 +1,5 @@
-- title "#{@phone_number.person} -- Add a Phone Number"
+- title "#{@phone_number.contact} -- Add a Phone Number"
 
 = render :partial => 'form'
 
-%p= link_to "Back to #{@phone_number.person}", person_path(@phone_number.person)
+%p= link_to "Back to #{@phone_number.contact}", polymorphic_path(@phone_number.contact)

@@ -3,10 +3,12 @@
 %p
   %strong Phone Numbers:
   = print_numbers @person.phone_numbers
-
+  = link_to "(add)", new_phone_number_path(:contact_id => @person)
+    
 %p
   %strong Email Addresses:
   = print_email_addresses @person.email_addresses
+  = link_to "(add)", new_email_address_path(:contact_id => @person)
 
 %p
   = link_to "Edit", edit_person_path(@person)

@@ -14,6 +14,7 @@ module PhoneNumbersHelper
     case digits.length
       when 12 then "+#{digits[0..1]} (#{digits[2..4]}) #{digits[5..7]}-#{digits[8..11]}"
       when 10 then "(#{digits[0..2]}) #{digits[3..5]}-#{digits[6..9]}"  
+      when 7 then "#{digits[0..2]}-#{digits[3..6]}"
       else digits  
     end
   end
