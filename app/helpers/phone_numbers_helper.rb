@@ -5,7 +5,16 @@ module PhoneNumbersHelper
   end
     
   def print_numbers(phone_numbers)    
-    items = phone_numbers.collect{|pn| "<li><span class='label'>#{pn.label}</span> #{pn.number} #{edit_phone_number_icon(pn)}</li>"}
+    items = phone_numbers.collect{|pn| "<li><span class='label'>#{pn.label}</span> #{print_number(pn)} #{edit_phone_number_icon(pn)}</li>"}
     "<ul>" + items.join("\n") + "</ul>"    
+  end
+  
+  def print_number(phone_number)
+    digits = phone_number.number
+    case digits.length
+      when 12 then "+#{digits[0..1]} (#{digits[2..4]}) #{digits[5..7]}-#{digits[8..11]}"
+      when 10 then "(#{digits[0..2]}) #{digits[3..5]}-#{digits[6..9]}"  
+      else digits  
+    end
   end
 end

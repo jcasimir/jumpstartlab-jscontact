@@ -33,4 +33,13 @@ describe PhoneNumber do
     @phone_number.should_not be_valid
   end
   
+  it "accepts a phone_number containing hyphens" do
+    @phone_number.number = "202-555-5555"
+    @phone_number.should be_valid
+  end
+
+  it "accepts a phone_number containing multiple symbols" do
+    @phone_number.number = "+(202) 555.5555"
+    @phone_number.should be_valid
+  end  
 end

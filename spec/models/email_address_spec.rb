@@ -32,4 +32,9 @@ describe EmailAddress do
     @email_address.label = nil
     @email_address.should_not be_valid
   end
+  
+  it "should not be valid with a malformed address" do
+    @email_address.address = "invalid_email@malformeddomain"
+    @email_address.should_not be_valid
+  end
 end
