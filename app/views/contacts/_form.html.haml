@@ -1,0 +1,8 @@
+- form_for @contact do |f|
+  = f.error_messages
+  %p
+    = f.label :type
+    %br
+    = f.text_field :type
+  %p
+    = f.submit

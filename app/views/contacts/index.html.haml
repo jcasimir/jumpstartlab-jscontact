@@ -1,0 +1,13 @@
+- title "Contacts"
+
+%table
+  %tr
+    %th Type
+  - for contact in @contacts
+    %tr
+      %td= h contact.type
+      %td= link_to 'Show', contact
+      %td= link_to 'Edit', edit_contact_path(contact)
+      %td= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Contact", new_contact_path
