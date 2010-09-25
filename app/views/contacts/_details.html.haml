@@ -1,0 +1,9 @@
+%p
+  %strong Phone Numbers:
+  = print_numbers contact.phone_numbers
+  = link_to "(add)", new_phone_number_path(:contact_id => contact)
+    
+%p
+  %strong Email Addresses:
+  = print_email_addresses contact.email_addresses
+  = link_to "(add)", new_email_address_path(:contact_id => contact)

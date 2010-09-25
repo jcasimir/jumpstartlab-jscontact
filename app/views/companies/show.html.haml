@@ -1,8 +1,6 @@
 - title "Company"
 
-%p
-  %strong Name:
-  =h @company.name
+= render :partial => "contacts/details", :locals => {:contact => @company}
 
 %p
   = link_to "Edit", edit_company_path(@company)

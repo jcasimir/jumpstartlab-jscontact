@@ -9,6 +9,12 @@
     = yield(:head)
   
   %body
+    #navigation
+      %ul
+        %li= link_to "All Contacts", contacts_path
+        %li= link_to "People", people_path
+        %li= link_to "Companies", companies_path
+        
     #container
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
