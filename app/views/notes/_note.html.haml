@@ -2,5 +2,3 @@
   %h3
     = link_to note.title, note_path(note)
   = print_contacts(note.contacts)
-  .body
-    = RedCloth.new(note.body).to_html if note.body

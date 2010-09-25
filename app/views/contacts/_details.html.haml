@@ -7,3 +7,7 @@
   %strong Email Addresses:
   = print_email_addresses contact.email_addresses
   = link_to "(add)", new_email_address_path(:contact_id => contact)
+
+%p
+  %strong Notes:
+  = render :partial => "notes/note", :collection => contact.notes
