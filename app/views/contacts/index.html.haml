@@ -1,6 +1,9 @@
 - title "Your Contacts"
 
-= link_to "Create a New Contact", new_contact_path
+%p
+  = link_to "Add a Company", new_company_path
+  |
+  = link_to "Add a Person", new_person_path
 
 .contacts_list
   = render :partial => "contact", :collection => @contacts

@@ -1,5 +1,11 @@
 .contact
   %h3= link_to contact, contact
+  .phone_numbers
+    %h4= "Phone #{link_to "(add)", new_phone_number_path(:contact_id => contact)}"
+    = print_numbers contact.phone_numbers
+  .email_addresses
+    %h4= "Email #{link_to "(add)", new_email_address_path(:contact_id => contact)}"
+    = print_email_addresses contact.email_addresses
   .actions
     = link_to "Edit", edit_polymorphic_path(contact)
     = link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete

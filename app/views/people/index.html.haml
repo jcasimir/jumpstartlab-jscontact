@@ -1,23 +1,6 @@
 - title "People"
 
-%table
-  %tr
-    %th First Name
-    %th Last Name
-    %th Phone Numbers
-    %th Email Addresses
-  - for person in @people
-    %tr
-      %td= h person.first_name
-      %td= h person.last_name
-      %td
-        = print_numbers person.phone_numbers
-        = link_to "(add)", new_phone_number_path(:person_id => person)
-      %td
-        = print_email_addresses person.email_addresses
-        = link_to "(add)", new_email_address_path(:person_id => person)
-      %td= link_to 'Show', person
-      %td= link_to 'Edit', edit_person_path(person)
-      %td= link_to 'Delete', person, :confirm => "Are you sure you want to delete #{person}?", :method => :delete
+= link_to "Create a New Person", new_person_path
 
-%p= link_to "New Person", new_person_path
+.contacts_list
+  = render :partial => "contacts/contact", :collection => @people

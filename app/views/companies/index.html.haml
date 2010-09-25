@@ -1,13 +1,6 @@
 - title "Companies"
 
-%table
-  %tr
-    %th Name
-  - for company in @companies
-    %tr
-      %td= h company.name
-      %td= link_to 'Show', company
-      %td= link_to 'Edit', edit_company_path(company)
-      %td= link_to 'Destroy', company, :confirm => 'Are you sure?', :method => :delete
+= link_to "Create a New Company", new_company_path
 
-%p= link_to "New Company", new_company_path
+.contacts_list
+  = render :partial => "contacts/contact", :collection => @companies
