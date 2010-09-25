@@ -1,8 +1,11 @@
-- title "Attachment"
+- title @attachment
 
 %p
-  %strong Title:
-  =h @attachment.title
+  %strong= link_to @attachment.file.original_filename, @attachment.file.url
+
+%p
+  %strong Associated With Contacts:
+= print_contacts(@attachment.contacts)
 
 %p
   = link_to "Edit", edit_attachment_path(@attachment)

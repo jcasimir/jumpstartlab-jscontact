@@ -11,3 +11,7 @@
 %p
   %strong Notes:
   = render :partial => "notes/note", :collection => contact.notes
+  
+%p
+  %strong Files:
+  = render :partial => "attachments/attachment", :collection => contact.attachments
