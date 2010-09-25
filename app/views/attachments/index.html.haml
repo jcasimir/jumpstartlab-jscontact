@@ -1,13 +1,12 @@
 - title "Attachments"
 
+%p= link_to "Create a New Attachment", new_attachment_path
+
 %table
   %tr
     %th Title
+    %th Contacts
   - for attachment in @attachments
     %tr
-      %td= h attachment.title
-      %td= link_to 'Show', attachment
-      %td= link_to 'Edit', edit_attachment_path(attachment)
-      %td= link_to 'Destroy', attachment, :confirm => 'Are you sure?', :method => :delete
-
-%p= link_to "New Attachment", new_attachment_path
+      %td= link_to attachment.title, attachment
+      %td= print_contacts attachment.contacts
