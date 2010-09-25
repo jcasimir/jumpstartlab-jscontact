@@ -1,0 +1,12 @@
+- title "Attachment"
+
+%p
+  %strong Title:
+  =h @attachment.title
+
+%p
+  = link_to "Edit", edit_attachment_path(@attachment)
+  |
+  = link_to "Destroy", @attachment, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", attachments_path

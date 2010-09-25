@@ -1,0 +1,8 @@
+- title "Edit Attachment"
+
+= render :partial => 'form'
+
+%p
+  = link_to "Show", attachment_path(@attachment)
+  |
+  = link_to "View All", attachments_path
