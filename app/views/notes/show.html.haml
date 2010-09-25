@@ -1,11 +1,7 @@
-- title "Note"
+- title @note
 
-%p
-  %strong Title:
-  =h @note.title
-%p
-  %strong Body:
-  =h @note.body
+= RedCloth.new(@note.body).to_html
+= print_contacts(@note.contacts)
 
 %p
   = link_to "Edit", edit_note_path(@note)
